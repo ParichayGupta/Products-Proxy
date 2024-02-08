@@ -28,6 +28,18 @@ public class ProductsController {
         return new ResponseEntity<>(products, HttpStatus.OK);
     }
 
+    /*
+        Payload for adding new Product
+     {
+        "id": 21,
+        "title": "test2 product",
+        "price": 13.5,
+        "category": "electronic",
+        "description": "lorem ipsum set",
+        "image": "https://i.pravatar.cc"
+      }
+    *
+    * */
     @PostMapping(value = "/add")
     public ResponseEntity<ProductDTO> addNewProduct(@RequestBody ProductDTO productDto){
         return iProductService.addNewProduct(productDto);
